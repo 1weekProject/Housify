@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp.jsx"
 import { Container } from 'react-bootstrap'
 import SignIn from './components/SignIn.jsx'
 import ListItem from './components/ListItem.jsx'
+import GeoLocation from './components/GeoLocation.jsx'
 
 
 const App = () => {
@@ -33,7 +34,8 @@ const App = () => {
       <div className="w-100" style={{ maxWidth: "600px" }}>
         {/* <SignUp /> */}
         <List items={items}/>
-        <SignIn/>
+        {/* <SignIn/> */}
+        <GeoLocation/>
       </div>
     </Container>
   

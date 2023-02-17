@@ -63,7 +63,7 @@ const saveUser = (req, res) => {
             password: hash,
             img: response.url,
             contact: req.body.contact,
-          });
+          }).then(response=>{res.json("Account created successfully")});
         })
         .catch((err) => console.error(err.message));
     })
