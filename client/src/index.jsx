@@ -40,8 +40,7 @@ let newData = items.filter((e) => {
 return (
     <div>
      
-       <BrowserRouter>
-    
+  <BrowserRouter>
      <nav> 
        <ul>    
         <li> <Link to="/"  style={{marginLeft:"30px"}}>Home</Link> </li>  
