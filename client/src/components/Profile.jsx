@@ -1,4 +1,4 @@
-import { Key } from '@mui/icons-material';
+
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router';
@@ -133,7 +133,7 @@ const [idd,Setidd]=useState("")
 <h4 id='h4' >{element.Area}m2</h4>
 <h4 id='h4P'>${element.Price}</h4>
 <button onClick={()=>(navigate("/aganse"))}>Sell</button>
-<button>Rent</button>
+<button onClick={()=>(navigate("/aganse"))}>Rent</button>
 
   </div></>)})}
   

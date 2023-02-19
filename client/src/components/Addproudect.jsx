@@ -127,7 +127,7 @@ function Addproudect(props) {
 		</label>
 		
 		<div className="text-center">
-			<button onClick={()=>{ handelclick() }} className="submit" name="add">add</button>
+			<button onClick={()=>{navigate("/Profile")}} className="submit" name="add">add</button>
 			<button onClick={()=>(navigate("/Profile"))} className="submit" name="back">back</button>
 		</div>
 	</form>

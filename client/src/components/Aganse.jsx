@@ -1,9 +1,42 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router';
+
 
 function Aganse() {
+  
+
+  const handelclick = ()=>{
+    axios.delete(`http://localhost:3000/api/housify/${props.user[0]._id}`).then
+    ((result)=>{console.log(result)}).catch((err)=>{console.log(err);})
+    }
+  
+  const navigate = useNavigate()
   return (
     <div className='aganse'>
       
+      <aside>
+  <p> Menu </p>
+  <a onClick={()=>(navigate("/profile"))}>
+    <i className="fa fa-user-o" aria-hidden="true"></i>
+    Profile
+  </a>
+  <a onClick={()=>(navigate("/addproudect"))} >
+    <i  className="far fa-edit" aria-hidden="true"></i>
+    A Sell or Rent house
+  </a>
+  <a onClick={()=>(navigate("/Update"))} >
+    <i className="fa fa-clone" aria-hidden="true"></i>
+   Update  Profile
+  </a>
+  <a onClick={()=> (navigate("/userPosts"))}>
+    <i className="fa fa-star-o" aria-hidden="true"></i>
+   My all houses
+  </a>
+  <a onClick={()=>{handelclick()}} >
+    <i className="fa fa-trash-o" aria-hidden="true"></i>
+    Delete account
+  </a>
+</aside>
 
      
       <div className="containerrr">
