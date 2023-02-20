@@ -11,7 +11,9 @@ import Profile from './components/Profile.jsx'
 import Home from "./components/Home.jsx"
 import About from "./components/About.jsx"
 import Search from './components/Search.jsx'
+import AddLocation from "./components/AddLocation.jsx"
 
+ 
 
 
 const App = () => {
@@ -49,16 +51,21 @@ return (
      <li><Link to="/items"  style={{marginLeft:"30px"}}>Posts</Link></li>
     <li> <Link to="/SignIn"  style={{marginLeft:"30px"}}>Login</Link></li>
      <li><Link to="/SignUp"  style={{marginLeft:"30px"}}>SignUp</Link></li>
+     <li><Link to="/geolocation"  style={{marginLeft:"30px"}}>geoLoc</Link></li>
+
      </ul>
     <Search search={search}/>
      </nav>
      <Routes>
-       <Route exact path="/" element={<Home />}></Route>
-       <Route exact path="/about" element={<About/>}></Route>
+       <Route exact path="/" element={<Home />}/>
+       <Route exact path="/about" element={<About/>}/>
        <Route exact path="/items" element={<Items/>}></Route>
        <Route exact path="/SignIn" element={<SignIn  />}></Route>
        <Route exact path="/SignUp" element={<SignUp  />}></Route>
        <Route exact path="/Profile" element={<Profile />}></Route>
+       <Route exact path="/geolocation" element={<AddLocation />}></Route>
+
+       
      </Routes>
     
      </BrowserRouter>
