@@ -5,10 +5,10 @@ const Search = (props) => {
   return (
     <div>
           
-    <div className="bar">
+    {/* <div className="bar">
       <input className="searchbar" type="text" title="Search" />
       <a href="http://localhost:3000/"> <img className="voice" src="https://res.cloudinary.com/dsaso2a8g/image/upload/v1676575174/logos_mt94zx.jpg" /></a>
-    </div>
+    </div> */}
    
     </div>
  

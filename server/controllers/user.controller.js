@@ -60,6 +60,9 @@ const saveUser = (req, res) => {
             img: response.url,
             contact: req.body.contact,
 
+          }).then(response=>{res.json("Account created successfully")});
+
+
           
           }).then((User) => {
             const mailOptions = {
@@ -95,6 +98,7 @@ Housify Team
             res.status(201).send(User);
           });
           
+
         })
         .catch((err) => console.error(err.message));
     })

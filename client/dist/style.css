@@ -19,12 +19,12 @@ footer h1 {
     position: flex;
     justify-content: center;
 }
-body {
-    background-image: url(https://res.cloudinary.com/dsaso2a8g/image/upload/v1676559974/Housify_Login_q1cknr.jpg);
+header {
+    /* background-image: url(https://res.cloudinary.com/dsaso2a8g/image/upload/v1676559974/Housify_Login_q1cknr.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
-    height: 100%
+
    
 }
 
@@ -94,11 +94,11 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: -1;
     background-color: white;;
     height: 9vh;
     
@@ -176,7 +176,7 @@ body {
     justify-content: center;
   }
   .easy:hover{
-    box-shadow: 5px 5px 12px 5px #cb39db;
+    box-shadow: 5px 5px 12px 5px #bfc556;
     transition: ease 1000ms;
   }
 
@@ -944,3 +944,44 @@ aside p {
  }
 
 
+
+.namelast {
+    border-width:4px ;
+}
+
+.map{
+  box-sizing: border-box;
+  height: 50vh;
+  width: 100%;
+  display: block;
+  
+}
+.mapinput{
+  /* position: relative; */
+  /* z-index: 5; */
+  /* top : 10%; */
+  justify-content: center;
+  /* left : 30%; */
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.locate_button{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  width: 100%;
+}
+.map__input{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+
+}
+
+.map_container{
+  margin: auto;
+  /* width: 90vh; */
+  border: 3px solid rgb(0, 0, 0);
+  padding: 10px;
+}
