@@ -12,7 +12,7 @@ export default function SignUp() {
   const [age, setAge] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [img, setImg] = useState(null);
+  const [img, setImg] = useState([]);
   const [confirmPassword, setConfirmpassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -52,6 +52,7 @@ export default function SignUp() {
     console.log(e.target.files)
     setImg(e.target.files[0]);
   };
+  console.log();
 
   const onSubmitData = (e) => {
     e.preventDefault();
@@ -82,8 +83,8 @@ export default function SignUp() {
       let options ={
         ContentType : "Application/json"
       }
-      axios.post("/api/items/SignUp", data,options);
-      navigate("/SignIn")
+      // axios.post("/api/items/SignUp", data,options);
+      // navigate("/SignIn")
     }
   }
   };
@@ -92,7 +93,7 @@ export default function SignUp() {
     <div className='aziz'>
       
       <Card  className="signup"
-      style={{ height: "80vh" , width: "100vh"}}>
+      style={{ height: "65vh" , width: "100vh"}}>
         <Card.Body className="w-70 h-100"  style={{ maxWidth: "600px" ,marginBottom: "12px" }}>
           <h2 className="text-center mb-4">SignUp</h2>
           <Form onSubmit={onSubmitData}>
@@ -131,7 +132,7 @@ export default function SignUp() {
             </Form.Group>
             <Form.Group className="mb-1">
               <Form.Label>Image Profile</Form.Label>
-              <Form.Control type="file" required onChange={hansdleimg} />
+              <Form.Control type="file" required multiple onChange={hansdleimg} />
             </Form.Group>
             </div>
 

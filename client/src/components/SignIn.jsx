@@ -26,7 +26,7 @@ const SignIn = (props) => {
       
     }
            
-        else alert("T rawwaa7 signUp")
+        else alert("Your account it's not defined") &&
        navigate("/SignIn")}
 
   const handleEmail = (e) => {
@@ -53,6 +53,7 @@ const SignIn = (props) => {
       // console.log(response.data.accessToken)
       let token = response.data.accessToken
       console.log("post========>",token)
+      // {localStorage.setItem('bearer', "bearer " +token)? props.setprofile(props.setprofile())}
         localStorage.setItem('bearer', "bearer " +token)
     })
     .catch(err=>{console.log(err)});
@@ -78,7 +79,7 @@ const SignIn = (props) => {
                 onChange={handlePassword}
               />
             </Form.Group>
-            <Button onClick={()=>(handleClick())} className="w-100 mt-4" type="submit ">
+            <Button onClick={()=>(handleClick(),props.setprofile(true))} className="w-100 mt-4" type="submit ">
               LogIn
             </Button>
           </Form>

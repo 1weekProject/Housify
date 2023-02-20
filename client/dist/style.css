@@ -192,6 +192,7 @@ body {
    justify-items: center;
    padding: 0%;
    gap: 10px;
+   
   }
   .aziz {
    
@@ -225,7 +226,9 @@ body {
     justify-content: space-between;
     width: 100%;
     margin: 20px 0 80px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    position: relative;
+    left: 15%;
 
  }
   .cardI {
@@ -606,12 +609,12 @@ h1 img{
     
 aside {
   color: #fff;
-    width: 250px;
-    padding-left: 20px;
-    height: 130vh;
-    background-image: linear-gradient(30deg , #100909, #f64171bf);
-    border-top-right-radius: 80px;
-    position: absolute;
+  width: 250px;
+  padding-left: 20px;
+  height: 600vh;
+  background-image: linear-gradient(30deg , #422045, #422045);
+  border-top-right-radius: 80px;
+  position: absolute;
 }
 
 aside a {
@@ -762,19 +765,21 @@ aside p {
   font-size: 18px;
 }
 .detailcards h4 {
+ 
   position: absolute;
-    top: 16%;
-    left: 77%;
-    font-size: 26px;
-    color: #c2149eb0;
+    top: 49%;
+    left: 80%;
+    font-size: 22px;
+    color: #4f098f;
 }
+
 
 #h4{
   position: absolute;
   top: 16%;
   left: 88%;
-  font-size: 26px;
-  color: #c2149eb0;
+  font-size: 22px;
+  color: #4f098f;
 }
 .detailcards p {
   font-size: 17px;
@@ -817,10 +822,13 @@ aside p {
 	 clear: both;
 }
  .cards {
-	 list-style: none;
-	 margin: 94px;
-	 padding: 0;
-	 text-align: center;
+	list-style: none;
+    margin: 12px 5px;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top: 19%;
+    left: 16%;
 }
  .cards li {
 	 display: inline-block;
@@ -937,10 +945,10 @@ aside p {
 }
  #h4P{
   position: absolute;
-  top: 24%;
-  left: 81%;
-  font-size: 26px;
-  color: #c2149eb0;
+  top: 117px;
+  left: 77%;
+  font-size: 27px;
+  color: #4f098f;
  }
 
 .itempage{
@@ -1049,3 +1057,45 @@ aside p {
     background-color: #555555;
     color: white
   }
+
+  .profileimg{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .profileimg img{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+/* nav .navvv {
+  font-size: 24px;
+} */
+
+#logout{
+  background-color: #5f57be;
+    color: white;
+    width: 90px;
+    height: 37px;
+    position: absolute;
+    left: 88%;
+    top: 23%;
+    border-radius: 9px;
+}
+#logouticon{
+  content: "\f08b";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 24px;
+}
+#logout h5 {
+  font-size: 13px;
+  position: absolute;
+  top: 11px;
+  left: 32px;
+}
+
+#PA{
+  display: grid;
+}
