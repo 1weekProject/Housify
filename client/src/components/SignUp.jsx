@@ -12,7 +12,7 @@ export default function SignUp() {
   const [age, setAge] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [img, setImg] = useState([]);
+  const [img, setImg] = useState(null);
   const [confirmPassword, setConfirmpassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -83,8 +83,8 @@ export default function SignUp() {
       let options ={
         ContentType : "Application/json"
       }
-      // axios.post("/api/items/SignUp", data,options);
-      // navigate("/SignIn")
+      axios.post("/api/items/SignUp", data,options);
+      navigate("/SignIn")
     }
   }
   };

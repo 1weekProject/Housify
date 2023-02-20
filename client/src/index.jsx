@@ -54,26 +54,21 @@ return (
     <div>
      
        <BrowserRouter>
-    {()=> {
-
-
-
-
-    }}
+   
      <nav> 
        <ul className='navvv'>    
         <li> <Link to="/"  style={{marginLeft:"30px"}}>Home</Link> </li>  
       <li><Link to="/about"  style={{marginLeft:"30px"}}>About us</Link></li>
       <li><Link to="/items"  style={{marginLeft:"30px"}}>Posts</Link></li>
-      <li> <Link to="/SignIn"  style={{marginLeft:"30px"}}>SignIn</Link></li>
-      <li><Link to="/SignUp"  style={{marginLeft:"30px"}}>SignUp</Link></li>
+      {profile ? null : <li> <Link to="/SignIn"  style={{marginLeft:"30px"}}>SignIn</Link></li>}
+      {profile ? null : <li><Link to="/SignUp"  style={{marginLeft:"30px"}}>SignUp</Link></li>}
       
-     {profile ? (<li><Link to="/Profile"  style={{marginLeft:"30px"}}>Profil</Link></li>): null } 
-     </ul>
+    {profile ? <li><Link to="/Profile"  style={{marginLeft:"30px"}}>Profil</Link></li>:null}</ul>
+    {  profile ?  
      <a id='logout' href="http://localhost:3000/" >
      <i id='logouticon' className="fa fa-sign-out" aria-hidden="true"></i>
      <h5>Sign-out</h5>
-        </a>
+        </a>:null}
     {/* <Search search={search}/> */}
      </nav>
      <Routes>
