@@ -108,14 +108,17 @@ const verifyUser = (req, res) => {
   let password = req.body.password;
 
   User.findOne({ email: email }).then((response) => {
+    console.log("mail",email);
+
     console.log(response)
     if(response===null){
       res.json("please verify your e-mail")
     }
     else{ bcrypt.compare(password, response.password, function (err, result) {
-      // console.log(result);
+      console.log(result);
       if (result) {
         const user = { email: email };
+        console.log("userrrrr",user)
         const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
         console.log("==>accessToken",accessToken);
         res.json({ accessToken: accessToken });

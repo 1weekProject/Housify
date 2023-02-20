@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router'
-import Profile from './Profile.jsx'
 import { Card, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -26,7 +25,7 @@ const SignIn = (props) => {
       
     }
            
-        else alert("T rawwaa7 signUp")
+        else alert("Your account it's not defined") &&
        navigate("/SignIn")}
 
   const handleEmail = (e) => {
@@ -53,6 +52,7 @@ const SignIn = (props) => {
       // console.log(response.data.accessToken)
       let token = response.data.accessToken
       console.log("post========>",token)
+      if (token.length > 10) props.setprofile(true)
         localStorage.setItem('bearer', "bearer " +token)
     })
     .catch(err=>{console.log(err)});
