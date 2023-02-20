@@ -24,6 +24,15 @@ const GeoLocation = () => {
   });
 
   const [markers, setMarkers] = useState([]);
+  useEffect(() => {
+    if (!("geolocation" in navigator)) {
+      onError({
+        code: 0,
+        message: "Geolocation Not Supported",
+      });
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  }, []);
 
   const onMapClick=useCallback((event) => {
     setMarkers([
@@ -54,19 +63,11 @@ const GeoLocation = () => {
     console.log("lng", location.coords.longitude);
   };
   const onError = (error) => {
-    setLocation(true);
+    // setLocation(true);
     error;
   };
 
-  useEffect(() => {
-    if (!("geolocation" in navigator)) {
-      onError({
-        code: 0,
-        message: "Geolocation Not Supported",
-      });
-    }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-  }, []);
+ 
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "",

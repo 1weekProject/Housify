@@ -53,12 +53,7 @@ const MapInput = ({ Autocomplete, getAdresse }) => {
               </div>
               <div>
                 <Button className="w-10 mt-0" type="button ">
-                  Enzel
-                </Button>
-              </div>
-              <div>
-                <Button className="w-10 mt-0" type="submit ">
-                  Enzel
+                  Add
                 </Button>
               </div>
             </div>
