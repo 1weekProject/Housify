@@ -171,7 +171,7 @@ export default GeoLocation;
 
 //   console.log("adress",adress);
 //   const { isLoaded } = useJsApiLoader({
-//     googleMapsApiKey: "AIzaSyCRVGZlKN4DqqIN9vGlWAr_G1CNbw3eTiA",
+//     googleMapsApiKey: "",
 //     libraries,
 
 //   });
