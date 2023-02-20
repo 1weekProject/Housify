@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { Card, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios"
-
+import axios from "axios";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -13,6 +13,8 @@ export default function SignUp() {
   const [img, setImg] = useState(null);
   const [confirmPassword, setConfirmpassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const navigate = useNavigate();
 
   const handleName = (e) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ export default function SignUp() {
   };
   const hansdleimg = (e) => {
     e.preventDefault();
-    console.log(e.target.files)
+    console.log(e.target.files);
     setImg(e.target.files[0]);
   };
 
@@ -55,14 +57,11 @@ export default function SignUp() {
     if (password !== confirmPassword) {
       alert("please verify your password");
     } else {
-      
       // console.log("data", data);
-      let image64=new FileReader()
-    
+      let image64 = new FileReader();
+
       image64.readAsDataURL(img);
       image64.onload = async () => {
-        
-      
         let data = {
           name: name,
           lastname: lastname,
@@ -71,77 +70,99 @@ export default function SignUp() {
           password: password,
           profileImg: image64.result,
           contact: phoneNumber,
-        }
-        console.log(data)
-      
+        };
+        console.log(data);
 
-      let options ={
-        ContentType : "Application/json"
-      }
-      axios.post("/api/items/SignUp", data,options)
+        let options = {
+          ContentType: "Application/json",
+        };
+        axios.post("/api/items/SignUp", data, options);
+        navigate("/SignIn");
+      };
     }
-  }
   };
 
   return (
-    <>
-      <Card>
-        <Card.Body>
+    <div className="aziz">
+      <Card className="signup" style={{ height: "90vh", width: "150vh" }}>
+        <Card.Body
+          className="w-70 h-100"
+          style={{ maxWidth: "600px", marginBottom: "12px" }}
+        >
           <h2 className="text-center mb-4">Sajjel Rou7ek</h2>
           <Form onSubmit={onSubmitData}>
-            <Form.Group className="mb-1">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" required onChange={handleName} />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>lastName</Form.Label>
-              <Form.Control type="text" required onChange={handleLastName} />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" required onChange={handleEmail} />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Age</Form.Label>
-              <Form.Control type="number" required onChange={handleAge} />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                type="number"
-                required
-                onChange={handlePhoenNumber}
-              />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                required
-                onChange={handlePassword}
-              />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="password"
-                required
-                onChange={handleConfirmPassword}
-              />
-            </Form.Group>
-            <Form.Group className="mb-1">
-              <Form.Label>Image Profile</Form.Label>
-              <Form.Control type="file" required onChange={hansdleimg} />
-            </Form.Group>
+            <div className="namelast">
+              <Form.Group className="mb-1">
+                <pre>
+                  {" "}
+                  <Form.Label>Name</Form.Label>{" "}
+                  <Form.Control type="text" required onChange={handleName} />{" "}
+                  <Form.Label>lastName</Form.Label>{" "}
+                  <Form.Control
+                    type="text"
+                    required
+                    onChange={handleLastName}
+                  />
+                </pre>
+              </Form.Group>
+            </div>
+            <div className="email&age">
+              <Form.Group className="mb-1">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" required onChange={handleEmail} />
+              </Form.Group>
+              <Form.Group className="mb-1">
+                <Form.Label>Age</Form.Label>
+                <Form.Control type="number" required onChange={handleAge} />
+              </Form.Group>
+            </div>
+
+            <div className="number&image">
+              <Form.Group className="mb-1">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control
+                  type="number"
+                  required
+                  onChange={handlePhoenNumber}
+                />
+              </Form.Group>
+              <Form.Group className="mb-1">
+                <Form.Label>Image Profile</Form.Label>
+                <Form.Control type="file" required onChange={hansdleimg} />
+              </Form.Group>
+            </div>
+
+            <div className="pass&conf">
+              <Form.Group className="mb-1">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  required
+                  onChange={handlePassword}
+                />
+              </Form.Group>
+              <Form.Group className="mb-1">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  required
+                  onChange={handleConfirmPassword}
+                />
+              </Form.Group>
+            </div>
+
             <Button className="w-100 mt-4" type="submit ">
               Enzel
             </Button>
           </Form>
+          <div
+            className="w-100 text-center mt-2"
+            onClick={() => navigate("/SignIn")}
+          >
+            3ndek Compte ? Connecti mela !!
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        3ndek Compte ? Connecti mela !!
-      </div>
-    </>
+    </div>
   );
 }
