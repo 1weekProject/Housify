@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+// import AddLocation from './AddLocation.jsx';
+import GeoLocation from './GeoLocation.jsx';
 function Addproudect(props) {
 
     const navigate = useNavigate()
@@ -44,30 +46,9 @@ function Addproudect(props) {
   return (
 
 
-    <div  className='UpdatePage'>
-      <aside>
-  <p> Menu </p>
-  <a onClick={()=>(navigate("/profile"))}>
-    <i className="fa fa-user-o" aria-hidden="true"></i>
-     Profile
-  </a>
-  <a  onClick={()=>(navigate("/"))} >
-    <i  className="far fa-edit" aria-hidden="true"></i>
-   Sell or Rent house
-  </a>
-  <a onClick={()=>(navigate("/Update"))}>
-    <i className="fa fa-clone" aria-hidden="true"></i>
-   Update your Profile
-  </a>
-  <a onClick={()=>(navigate("/userPosts"))}>
-    <i className="fa fa-star-o" aria-hidden="true"></i>
-    My all houses
-  </a>
-  <a >
-    <i className="fa fa-trash-o" aria-hidden="true"></i>
-    Delete  account
-  </a>
-</aside>
+    < div className='UpdatePage'>
+    
+     
 
 <div className="containerAdd"> 
 	<header>
@@ -127,12 +108,17 @@ function Addproudect(props) {
 		</label>
 		
 		<div className="text-center">
-			<button onClick={()=>{ handelclick() }} className="submit" name="add">add</button>
+			<button onClick={()=>{navigate("/Profile") && handelclick()}} className="submit" name="add">add</button>
 			<button onClick={()=>(navigate("/Profile"))} className="submit" name="back">back</button>
 		</div>
 	</form>
+ </div> 
 
-    </div>
+    
+    <div className="geoloc">
+
+    <GeoLocation/>
+</div>
     
     </div>
   )

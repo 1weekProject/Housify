@@ -11,7 +11,7 @@ function Profile(props) {
   const navigate = useNavigate()
 const [Details,SetDetails]=useState(true)
 const [idd,Setidd]=useState("")
-
+console.log(props.user);
 
 
   const handelclick = ()=>{
@@ -35,6 +35,10 @@ const [idd,Setidd]=useState("")
     <i className="fa fa-user-o" aria-hidden="true"></i>
     Profile
   </a>
+  <div className='profileimg'>
+    <img src= {props.user[0].img} alt="" />
+    <h5>{props.user[0].FirstName} <br /> {props.user[0].LastName} </h5>
+  </div>
   <a onClick={()=>(navigate("/addproudect"))} >
     <i  className="far fa-edit" aria-hidden="true"></i>
     A Sell or Rent house
@@ -94,6 +98,11 @@ const [idd,Setidd]=useState("")
     <i className="fa fa-user-o" aria-hidden="true"></i>
      Profile
   </a>
+  <div className='profileimg'>
+    <img src= {props.user[0].img} alt="" />
+    <h5>{props.user[0].FirstName} <br /> {props.user[0].LastName} </h5>
+  </div>
+  
   <a onClick={()=>(navigate("/addproudect"))} >
     <i  className="far fa-edit" aria-hidden="true"></i>
     Sell or Rent house
@@ -117,7 +126,7 @@ const [idd,Setidd]=useState("")
 {props.data.filter((element)=> ( element._id === idd)).map((element,index)=> {
   return (
    
-  <>
+  <div key={index}>
   <div key={index} className='detailcards'>
   {element.images.map((ele,index)=>{ return (
  <img key={index} src= {ele} alt="" />
@@ -126,16 +135,18 @@ const [idd,Setidd]=useState("")
 <h5 >{element.type}</h5>
 <h2>{element.Adress}</h2>
 <p>{element.description}</p>
-<h4>{element.for}</h4>
+<div className='PA'>
+<h4>${element.Price}</h4>
+<h4 id='h4' > Area : {element.Area} </h4> </div>
 <h3>NbofBeds : {element.NbofBeds}</h3>
 <h3> NbofBathrooms : {element.NbofBathrooms}</h3>
 <h3> NbofKitchen : {element.NbofKitchen}</h3>
-<h4 id='h4' >{element.Area}m2</h4>
-<h4 id='h4P'>${element.Price}</h4>
-<button onClick={()=>(navigate("/aganse"))}>Sell</button>
-<button>Rent</button>
 
-  </div></>)})}
+<h4 id='h4P'>{element.for}</h4>
+<button onClick={()=>(navigate("/aganse"))}>Sell</button>
+<button onClick={()=>(navigate("/aganse"))}>Rent</button>
+
+  </div></div>)})}
   
 </div> </div></>}
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router'
-import Profile from './Profile.jsx'
 import { Card, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -23,11 +22,11 @@ const SignIn = (props) => {
     console.log(filtred);
     if(!!filtred.length){
       props.setUser(filtred)
-      
+      // navigate("/Profile")
     }
            
-        else alert("T rawwaa7 signUp")
-       navigate("/SignIn")}
+        else alert("Your account it's not defined") 
+       }
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -53,14 +52,16 @@ const SignIn = (props) => {
       // console.log(response.data.accessToken)
       let token = response.data.accessToken
       console.log("post========>",token)
+      if (token.length > 10) props.setprofile(true)
         localStorage.setItem('bearer', "bearer " +token)
+        navigate("/Profile")
     })
-    .catch(err=>{console.log(err)});
-    navigate("/Profile")
+    .catch(err=>{console.log(err) });
+  
   };
 
   return (
-    <>
+    <div className="signInDIV">
       <Card className="easy"
       style={{ minHeight: "70vh" , width: "50vh"}}>
         <Card.Body className="w-100 h-100"  style={{ maxWidth: "600px" ,marginTop: "33px" }}>
@@ -83,12 +84,12 @@ const SignIn = (props) => {
             </Button>
           </Form>
           <div className="w-100 text-center mt-2" onClick={()=>(navigate("/SignUp"))}>
-       You don't have an account ?Create one please! 
+       If you don't have account you can create account
       </div>
         </Card.Body>
       </Card>
       <p className="disclaimer">with Housify your income will got height initul they reach the sky </p>
-    </>
+    </div>
   );
 };
 

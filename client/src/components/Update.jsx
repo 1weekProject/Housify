@@ -44,6 +44,10 @@ axios.put(`/api/items/${props.user[0]._id}`, {
     <i className="fa fa-user-o" aria-hidden="true"></i>
      Profile
   </a>
+  <div className='profileimg'>
+    <img src= {props.user[0].img} alt="" />
+    <h5>{props.user[0].FirstName} <br /> {props.user[0].LastName} </h5>
+  </div>
   <a onClick={()=>{navigate("/addproudect")}}>
     <i className="far fa-edit" aria-hidden="true"></i>
 	Sell or Rent house
