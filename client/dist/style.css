@@ -628,11 +628,11 @@ aside a {
 }
 
 aside a:hover {
-  color: #3f5efb;
+  color: #ffffff;
   background: #fff;
   outline: none;
   position: relative;
-  background-color: #fff;
+  background-color: #1b1919;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -1098,4 +1098,34 @@ aside p {
 
 #PA{
   display: grid;
+}
+
+.calpage{
+  height: 1000px;
+  min-height: 100vh;
+  font-family: 'Fira Sans', sans-serif;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  display: grid;
+  gap: -4px;
+  gap: 54px;
+  position: absolute;
+    top: 14%;
+    left: 2%;
+}
+.calpage aside {
+  color: #fff;
+    width: 250px;
+    padding-left: 19px;
+    height: 600vh;
+    background-image: linear-gradient(30deg , #422045, #422045);
+    border-top-right-radius: 80px;
+    position: absolute;
+    top: -42px;
+    left: -60px;
+   
+}
+.calpage aside {
+
 }

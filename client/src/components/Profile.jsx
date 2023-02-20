@@ -11,7 +11,7 @@ function Profile(props) {
   const navigate = useNavigate()
 const [Details,SetDetails]=useState(true)
 const [idd,Setidd]=useState("")
-
+console.log(props.user);
 
 
   const handelclick = ()=>{

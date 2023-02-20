@@ -13,7 +13,7 @@ import Update from './components/Update.jsx'
 import Userposts from './components/Userposts.jsx'
 import Addproudect from './components/Addproudect.jsx'
 import Aganse from './components/Aganse.jsx'
-
+import Cal from './Cal.jsx'
 
 
 const App = () => {
@@ -82,6 +82,7 @@ return (
        <Route exact path="/userPosts" element={< Userposts data={data}  user={user} />}></Route>
        <Route exact path="/addproudect" element={< Addproudect  user={user} relod={relod} Setrelod={Setrelod} />}></Route>
        <Route exact path="/aganse" element={< Aganse  user={user} />}></Route>
+       <Route exact path="/cal" element={<Cal user = {user}/>}></Route>
      </Routes>
     
      </BrowserRouter>
